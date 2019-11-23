@@ -49,7 +49,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
           Hi <?php echo $userRow['user_Email' ]; ?>
            
            <a  href="..\login\logout.php?logout">Sign Out</a>
-
+<div class ="manageUser">
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="index.php">Show all</a>
