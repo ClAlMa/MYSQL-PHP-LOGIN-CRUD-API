@@ -50,14 +50,13 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
            
            <a  href="..\login\logout.php?logout">Sign Out</a>
 <div class ="manageUser">
-   <a href= "create.php"><button class="btn btn-secondary" type="button" >Add Media</button></a>
 
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" href="index.php">Show all</a>
+    <a class="nav-link" href="index.php">Show all</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="restaurants.php">Gustotorics</a>
+    <a class="nav-link active" href="restaurants.php">Gustotorics</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="events.php">Events</a>

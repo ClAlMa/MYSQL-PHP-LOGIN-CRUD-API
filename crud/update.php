@@ -5,12 +5,26 @@ require_once 'actions/db_connect.php';
 if ($_GET['id']) {
    $id = $_GET['id'];
 
-   $sql = "SELECT * FROM media WHERE id = {$id}" ;
-   $result = $connect->query($sql);
+   $sql = "SELECT * FROM {$id}";
+      echo "sql=".$sql."<br>";
+   $result = $conn->query($sql);
 
    $data = $result->fetch_assoc();
 
-   $connect->close();
+$subbi = substr($id,-8,-2);
+
+if ($subbi=="res_id"){
+$subtable="restaurant";
+}
+elseif ($subbi=="tod_id") {
+$subtable="todo";
+}
+else{
+$subtable="concerts";
+}
+echo "<br> subbi=" .$subbi ."<br>";
+
+   $conn->close();
 
 ?>
 
@@ -44,42 +58,36 @@ if ($_GET['id']) {
        <table  cellspacing="0" cellpadding= "0">
            <tr>
                <th>title</th>
-               <td><input type="text"  name="title" placeholder ="title" value="<?php echo $data['title'] ?>"  /></td>
+               <td><input type="text"  name="title" placeholder ="title" value="<?php echo $data['tod_name'] ?><?php echo $data['res_name'] ?><?php echo $data['loc_name'] ?>"  /></td>
            </tr >    
            <tr>
-               <th>Author name</th>
-               <td><input type= "text" name="author_name"  placeholder="Author name" value ="<?php echo $data['author_name'] ?>" /></td >
-           </tr>
-           <tr>
-               <th >Author surname</th>
-               <td><input type ="text" name= "author_surname" placeholder= "Author surname" value= "<?php echo $data['author_surname'] ?>" /></td>
-           </tr>
-                      <tr>
-               <th >image</th>
-               <td><input type ="text" name= "image" placeholder= "image" value= "<?php echo $data['image'] ?>" /></td>
-           </tr>
-           <tr>
-               <th >ISBN</th>
-               <td><input type ="text" name= "isbn" placeholder= "ISBN" value= "<?php echo $data['isbn'] ?>" /></td>
+               <th>type</th>
+               <td><input type= "text" name="type"  placeholder="type" value ="<?php echo $data['tod_type'] ?><?php echo $data['res_type'] ?><?php echo $data['loc_type'] ?>" /></td >
            </tr>
            <tr>
                <th >description</th>
-               <td><input type ="text" name= "description" placeholder= "description" value= "<?php echo $data['description'] ?>" /></td>
+               <td><input type ="text" name= "description" placeholder= "description" value= "<?php echo $data['tod_descr'] ?><?php echo $data['res_descr'] ?><?php echo $data['loc_descr'] ?>" /></td>
+           </tr>
+                      <tr>
+               <th >web</th>
+               <td><input type ="text" name= "web" placeholder= "web" value= "<?php echo $data['tod_web'] ?><?php echo $data['loc_web'] ?>" /></td>
            </tr>
            <tr>
-               <th >publish date</th>
-               <td><input type ="text" name= "publish_date" placeholder= "publish date" value= "<?php echo $data['publish_date'] ?>" /></td>
+               <th >adress</th>
+               <td><input type ="text" name= "adress" placeholder= "adress" value= "<?php echo $data['tod_adr'] ?><?php echo $data['res_adr'] ?><?php echo $data['loc_adr'] ?>" /></td>
            </tr>
            <tr>
-               <th >type</th>
-               <td><input type ="text" name= "type" placeholder= "type" value= "<?php echo $data['type'] ?>" /></td>
+               <th >conDate</th>
+               <td><input type ="text" name= "condate" placeholder= "condate" value= "<?php echo $data['con_date'] ?>" /></td>
            </tr>
            <tr>
-               <th >available</th>
-               <td><input type ="text" name= "available" placeholder= "available" value= "<?php echo $data['available'] ?>" /></td>
+               <th >conprize</th>
+               <td><input type ="text" name= "conprize" placeholder= "conprize" value= "<?php echo $data['con_prize'] ?>" /></td>
            </tr>
            <tr>
-               <input type= "hidden" name= "id" value= "<?php echo $data['id']?>" />
+               <input type= "hidden" name= "id" value= "<?php echo $data[$subbi]?>" />
+ <input type="hidden" name= "statement" value="<?php echo $id ?>" />
+ <input type="hidden" name= "subtable" value="<?php echo $subtable ?>" />
                <td><button class="btn btn-info"  type= "submit">Save Changes</button></td>
                <td>                <a href='index.php'><button class='btn btn-success'  type='button'>back</button></a></td >
            </tr>

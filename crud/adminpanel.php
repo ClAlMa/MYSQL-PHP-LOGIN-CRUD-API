@@ -39,29 +39,11 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 </head>
 <body>
-          Hi <?php echo $userRow['user_Email' ]; ?>
+          Hi Mr. Admin <?php echo $userRow['user_Email' ]; ?>
            
            <a  href="..\login\logout.php?logout">Sign Out</a>
 <div class ="manageUser">
    <a href= "create.php"><button class="btn btn-secondary" type="button" >Add Media</button></a>
-
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="index.php">Show all</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="restaurants.php">Gustotorics</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="events.php">Events</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" href="adminpanel.php">admin</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul>
 
 
 <!-- table todo  -->
@@ -90,9 +72,8 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                         <td><a href='".$row['adr_web']."'>" .$row['adr_web']."</a></td>
                         <td>" .$row['adr_city']."</td>
                        <td>
-                         <a href='update.php?id=".'tod_id='.$row['tod_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
-                           <a href='delete.php?id=".' todo WHERE '.'tod_id='.$row['tod_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
-                          <a href='showmore.php?id=".'tod_id'.$row['tod_id']."'><button class='btn btn-success'  type='button'>show media</button></a>
+                        <a href='update.php?id=".' todo WHERE '.'tod_id='.$row['tod_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
+                        <a href='delete.php?id=".' todo WHERE '.'tod_id='.$row['tod_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
                        </td>
                    </tr>" ;
                }
@@ -130,9 +111,8 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                         <td><a href='".$row['adr_web']."'>" .$row['adr_web']."</a></td>
                         <td>" .$row['adr_city']."</td>
                        <td>
-                           <a href='update.php?id=".$row['res_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
-                           <a href='delete.php?id=".' restaurant WHERE '.'res_id='.$row['res_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
-                          <a href='showmore.php?id=".$row['res_id']."'><button class='btn btn-success'  type='button'>show media</button></a>
+                        <a href='update.php?id=".' restaurant WHERE '.'res_id='.$row['res_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
+                        <a href='delete.php?id=".' restaurant WHERE '.'res_id='.$row['res_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
                        </td>
                    </tr>" ;
                }
@@ -174,9 +154,8 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                         <td>" .$row['con_date']."</td>
                         <td>" .$row['con_prize']."</td>
                        <td>
-                           <a href='update.php?id=".$row['con_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
- <a href='delete.php?id=".' concerts WHERE '.'con_id='.$row['con_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
-                          <a href='showmore.php?id=".$row['con_id']."'><button class='btn btn-success'  type='button'>show media</button></a>
+                        <a href='update.php?id=".' concerts WHERE '.'con_id='.$row['con_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
+                        <a href='delete.php?id=".' concerts WHERE '.'con_id='.$row['con_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
                        </td>
                    </tr>" ;
                }
