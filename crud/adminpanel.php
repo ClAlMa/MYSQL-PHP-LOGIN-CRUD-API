@@ -91,7 +91,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                         <td>" .$row['adr_city']."</td>
                        <td>
                          <a href='update.php?id=".'tod_id='.$row['tod_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
-                           <a href='delete.php?id=".'tod_id='.$row['tod_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
+                           <a href='delete.php?id=".' todo WHERE '.'tod_id='.$row['tod_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
                           <a href='showmore.php?id=".'tod_id'.$row['tod_id']."'><button class='btn btn-success'  type='button'>show media</button></a>
                        </td>
                    </tr>" ;
@@ -131,7 +131,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                         <td>" .$row['adr_city']."</td>
                        <td>
                            <a href='update.php?id=".$row['res_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
-                           <a href='delete.php?id=".$row['res_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
+                           <a href='delete.php?id=".' restaurant WHERE '.'res_id='.$row['res_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
                           <a href='showmore.php?id=".$row['res_id']."'><button class='btn btn-success'  type='button'>show media</button></a>
                        </td>
                    </tr>" ;
@@ -175,7 +175,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                         <td>" .$row['con_prize']."</td>
                        <td>
                            <a href='update.php?id=".$row['con_id']."'><button class='btn btn-primary' type='button'>Edit</button></a>
-                           <a href='delete.php?id=".$row['con_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
+ <a href='delete.php?id=".' concerts WHERE '.'con_id='.$row['con_id']."'><button class='btn btn-danger'  type='button'>Delete</button></a>
                           <a href='showmore.php?id=".$row['con_id']."'><button class='btn btn-success'  type='button'>show media</button></a>
                        </td>
                    </tr>" ;

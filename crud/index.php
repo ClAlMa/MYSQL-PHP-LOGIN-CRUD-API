@@ -70,7 +70,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
 <!-- table todo  -->
-<h3>Locations</h3>
+<h3>Todo</h3>
    <table  border="1" cellspacing= "0" cellpadding="0">
        <thead>
            <tr>
