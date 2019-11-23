@@ -54,7 +54,7 @@ echo "<br> subbi=" .$subbi ."<br>";
 <fieldset>
    <legend>Update media</legend>
 
-   <form action="actions/a_update.php"  method="post">
+   <form action="actions/a_create.php"  method="post">
        <table  cellspacing="0" cellpadding= "0">
            <tr>
                <th>title</th>
