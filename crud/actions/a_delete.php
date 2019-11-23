@@ -5,7 +5,7 @@ require_once 'db_connect.php';
 if ($_POST) {
    $id = $_POST['id'];
 
-   $sql = "DELETE FROM todo WHERE {$id}";
+   $sql = "DELETE FROM todo WHERE tod_id={$id}";
    echo $sql."katze";
     if($conn->query($sql) === TRUE) {
        echo "<p>Successfully deleted!!</p>" ;
