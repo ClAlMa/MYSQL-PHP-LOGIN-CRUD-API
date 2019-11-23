@@ -4,7 +4,7 @@ session_start();
 require_once 'actions/db_connect.php';
 
 if(!isset($_SESSION["admin"])){
-  header("Location: login.php");
+  header("Location: ../login/index.php");
 }
 
 if(isset($_SESSION["user"])){

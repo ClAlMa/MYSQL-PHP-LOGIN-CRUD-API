@@ -5,17 +5,11 @@ if ($_GET['id']) {
    $id = $_GET['id'];
 
    $sql = "SELECT * FROM {$id}";
-   echo "sql=".$sql."<br>";
+
    $result = $conn->query($sql);
    $data = $result->fetch_assoc();
-echo "<br>data=" .$data;
 
-foreach($data as $value){ 
-    echo $value;    
-?>  <br/>
-<?php
-}
-echo "id=".$id."<br>";
+// echo "id=".$id."<br>";
 $subbi = substr($id,-8,-2);
 
 if ($subbi=="res_id"){
@@ -27,8 +21,8 @@ $subtable="todo";
 else{
 $subtable="concerts";
 }
-echo "<br> subbi=" .$subbi ."<br>";
-echo "<br>subtable=".$subtable."<br>";
+// echo "<br> subbi=" .$subbi ."<br>";
+// echo "<br>subtable=".$subtable."<br>";
    $conn->close();
 ?>
 

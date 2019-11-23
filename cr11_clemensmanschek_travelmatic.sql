@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2019 at 04:12 PM
+-- Generation Time: Nov 23, 2019 at 11:59 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -75,7 +75,9 @@ CREATE TABLE `concerts` (
 
 INSERT INTO `concerts` (`con_id`, `con_name`, `con_type`, `con_descr`, `con_web`, `con_adr`, `con_date`, `con_prize`, `con_creation_date`) VALUES
 (1, 'Nightwish', 'Metal', 'the 5th singer is good agaon', 'http://nightwish.com/', 6, '2019-12-24 19:00:00', '120 Euro', '2019-11-23 13:00:25'),
-(2, 'Yasmo und die Klangkantine', 'Hip-Hop', 'Austrian Tunesian female voice is on the mic again.', 'https://www.yasmo.at/', 5, '2019-11-27 20:00:00', '45 Euro', '2019-11-23 13:00:25');
+(2, 'Yasmo und die Klangkantine', 'Hip-Hop', 'Austrian Tunesian female voice is on the mic again.', 'https://www.yasmo.at/', 5, '2019-11-27 20:00:00', '45 Euro', '2019-11-23 13:00:25'),
+(4, 'jkh', 'dvd', 'gkj', 'jökl', 2, '1992-04-04 00:00:00', '45 Euro', '2019-11-23 22:08:12'),
+(5, 'Fiakergulasch', 'cooking sounds', 'mhhhmmm', 'sfjio', 3, '8912-05-04 00:00:00', '15645 EURONEN!!', '2019-11-23 23:35:05');
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,14 @@ CREATE TABLE `restaurant` (
 
 INSERT INTO `restaurant` (`res_id`, `res_name`, `res_type`, `res_descr`, `res_adr`) VALUES
 (1, 'Das Fritz', 'Bauernkuchl mit Fisch', 'Eat directly at the UNESCO world-culture-heritage, the Neusiedlersee.', 3),
-(2, 'Centimeter VII', 'Bauernkuchl a mit Fisch', 'Get much food for low money!', 4);
+(2, 'Centimeter VII', 'Bauernkuchl a mit Fisch', 'Get much food for low money!', 4),
+(3, NULL, NULL, NULL, NULL),
+(6, 'hjj', 'hjj', 'hjj', 4),
+(7, 'name', 'typ', 'descr', 2),
+(8, 'a', 'b', 'c', 4),
+(9, 'arnol', 'truhe', 'gugu', 3),
+(11, 'klj', 'öjlk', 'jöklj', 4),
+(13, 'Jammi Kebab', 'Upper class', 'alles scharf, sweet curry onion', 3);
 
 -- --------------------------------------------------------
 
@@ -119,10 +128,10 @@ CREATE TABLE `todo` (
 --
 
 INSERT INTO `todo` (`tod_id`, `tod_name`, `tod_type`, `tod_descr`, `tod_web`, `tod_adr`) VALUES
-(1, 'Steinhofgründe', 'Park area', 'Heavenly area, you may even see deers there.', NULL, 1),
+(1, 'Steinhofgründe', 'outdoor area', 'ur beautiful', NULL, 1),
 (2, 'Augarten', 'Park area', 'Beautiful flower gardens, that invite to stay.', NULL, 2),
-(3, 'jhl', 'jlh', 'jh', 'ljkh', 1),
-(4, 'jhl', 'jlh', 'jh', 'ljkh', 1);
+(7, 'k', 'khg', 'gkh', 'hkg', 4),
+(8, 'Steinschleudern', 'activity', 'Throw stones', 'fettabernett.de', 5);
 
 -- --------------------------------------------------------
 
@@ -144,7 +153,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_pass`, `user_role`) VALUES
 (3, 'cala', 'mansccle@gmx.at', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'admin'),
-(4, 'katz', 'katze@miau.at', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'user');
+(4, 'katz', 'katze@miau.at', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'user'),
+(5, 'prinzessin', 'je@jo.oi', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'user');
 
 --
 -- Indexes for dumped tables
@@ -197,25 +207,25 @@ ALTER TABLE `adresses`
 -- AUTO_INCREMENT for table `concerts`
 --
 ALTER TABLE `concerts`
-  MODIFY `con_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `con_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `todo`
 --
 ALTER TABLE `todo`
-  MODIFY `tod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `tod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

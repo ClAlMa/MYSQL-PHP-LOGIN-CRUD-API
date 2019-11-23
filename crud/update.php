@@ -6,7 +6,6 @@ if ($_GET['id']) {
    $id = $_GET['id'];
 
    $sql = "SELECT * FROM {$id}";
-      echo "sql=".$sql."<br>";
    $result = $conn->query($sql);
 
    $data = $result->fetch_assoc();
@@ -22,7 +21,6 @@ $subtable="todo";
 else{
 $subtable="concerts";
 }
-echo "<br> subbi=" .$subbi ."<br>";
 
    $conn->close();
 

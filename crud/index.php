@@ -26,7 +26,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Welcome - <?php echo $userRow['user_Email' ]; ?></title>
+   <title>Welcome - <?php echo $userRow['user_email']; ?></title>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
@@ -44,10 +44,38 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
        }
 
    </style>
-
+   <style>
+     #fb-btn , #logout{
+       display: none;
+     }
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+        height: 15%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+   </style>
 </head>
 <body>
-          Hi <?php echo $userRow['user_Email' ]; ?>
+     <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.209, lng: 16.3072},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap"
+    async defer></script>
+
+          Hi <?php echo $userRow['user_email']; ?>
            
            <a  href="..\login\logout.php?logout">Sign Out</a>
 <div class ="manageUser">
@@ -60,12 +88,6 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
   </li>
   <li class="nav-item">
     <a class="nav-link" href="events.php">Events</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" href="adminpanel.php">admin</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </li>
 </ul>
 
